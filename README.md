@@ -20,14 +20,17 @@ so paths, diffs, exit codes and expand hints all survive.
 ## Install
 
 ```bash
-# try it for one session
+# from GitHub, no npm account needed
+pi install git:github.com/chandra447/pi-glyphs
+
+# one session only
+pi -e git:github.com/chandra447/pi-glyphs
+
+# from a local checkout
 pi -e ~/pi-glyphs
 
-# keep it
-pi install ~/pi-glyphs
-
-# from git, later
-pi install git:github.com/<you>/pi-glyphs
+# once it is on npm
+pi install npm:pi-glyphs
 ```
 
 Then `/glyphs` to pick a preset, or `pi --glyphs nerd`.
@@ -141,15 +144,9 @@ The package ships no build step: `src/*.ts` is loaded directly by Pi.
 
 ## Publishing
 
-```bash
-# bump version, then
-npm publish
-pi install npm:pi-glyphs
-```
-
-Fill in `repository`, `homepage` and `author` in `package.json` first, and add a
-`pi.image` (a screenshot of the four presets) so the pi.dev gallery has something
-to show.
+See [PUBLISHING.md](PUBLISHING.md) for the verified steps — what makes this
+directory a Pi package, the git/npm/local install routes, the pre-publish checks
+and the gallery requirements.
 
 ## Credits
 
