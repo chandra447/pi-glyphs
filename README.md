@@ -39,7 +39,7 @@ Then `/glyphs` to pick a preset, or `pi --glyphs nerd`.
 | `nerd` | a patched Nerd Font | `󰆍 bash` `󰈙 read` `󰈔 edit` `󰍉 grep` |
 | `unicode` | any decent font | `❯ bash` `▤ read` `✎ edit` `⌕ grep` |
 | `emoji` | a colour terminal | `💻 bash` `📖 read` `✏️ edit` `🔍 grep` |
-| `ascii` | nothing at all | `$ bash` `[R] read` `[E] edit` `/ grep` |
+| `ascii` | nothing at all | `sh bash` `[R] read` `[E] edit` `/ grep` |
 
 `unicode` is the default because it renders without font patching. If you have a
 Nerd Font, `nerd` is the one that looks like oh-my-pi.

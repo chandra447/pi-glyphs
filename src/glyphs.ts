@@ -117,7 +117,7 @@ const GLYPHS: Record<GlyphKey, Row> = {
 	read: ["\uf02d", "▤", "📖", "[R]"], // nf-fa-book
 	write: ["\uea7f", "✎", "📝", "[W]"], // nf-cod-new_file
 	edit: ["\uea73", "✎", "✏️", "[E]"], // nf-cod-edit
-	bash: ["\uebca", "❯", "💻", "$"], // nf-cod-terminal
+	bash: ["\uebca", "❯", "💻", "sh"], // nf-cod-terminal — ASCII says "sh" because Pi's line already starts with "$"
 	search: ["\uf002", "⌕", "🔍", "/"], // nf-fa-search
 	folder: ["\uf115", "📁", "📁", "[D]"], // nf-fa-folder_open_o
 	list: ["\uf03a", "≡", "📋", "[L]"], // nf-fa-list
