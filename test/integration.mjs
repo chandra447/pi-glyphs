@@ -223,7 +223,27 @@ check("base renderer never receives the pi-glyphs wrapper", () => {
 	assert.ok(!(seen instanceof IconPrefix), "lastComponent must not be the wrapper");
 });
 
-// ── 10. every preset fits the real box ───────────────────────────────────
+// ── 10. the glyph follows the session theme, not a captured colour ───────
+check("glyph recolours when the session theme changes", () => {
+	const row = makeRow("read", { path: "src/app.ts" }, readDefinition);
+	const glyph = glyphFor("unicode", "ts");
+	const sgr = /\u001b\[(?:3[0-9]|38;[0-9;]+|9[0-9])m/g;
+	const pick = () => row.render(80).find((line) => line.includes(glyph)) || "";
+
+	initTheme("dark");
+	const dark = (pick().match(sgr) || []).slice(0, 2).join();
+
+	initTheme("light");
+	row.invalidate();
+	const light = (pick().match(sgr) || []).slice(0, 2).join();
+
+	assert.ok(dark.length > 0, "dark render is coloured");
+	assert.notEqual(dark, light, "glyph colour tracks the theme");
+	assert.ok(pick().includes(glyph), "glyph survives the switch");
+	initTheme("dark");
+});
+
+// ── 11. every preset fits the real box ───────────────────────────────────
 check("all four presets fit 80 cols", () => {
 	for (const preset of ["nerd", "unicode", "emoji", "ascii"]) {
 		command.handler(preset, ctx);

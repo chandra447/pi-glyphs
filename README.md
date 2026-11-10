@@ -99,6 +99,12 @@ Resolution order, later wins:
 - Tools with no renderer of their own (for example an MCP tool before its server
   connects) get `name` + a compact argument preview, the same density Pi uses for
   its own fallback; expanding the row shows every argument.
+- Colours come from Pi's semantic tokens through the live theme handle, so the
+  glyphs follow the session's theme: `accent` for a tool, `dim` while its
+  arguments are still streaming, `error` on failure, `muted` for a fallback row's
+  arguments, `accent` for the spinner. The thinking label inherits Pi's own
+  `thinkingText` because Pi styles that string itself. `test/integration.mjs`
+  asserts a glyph recolours when the session theme switches.
 - The user rail is a display-only Markdown transform. It refuses to touch
   headings, lists, quotes, fences, tables, HTML, math or horizontal rules,
   where a leading glyph would change what Markdown means.
