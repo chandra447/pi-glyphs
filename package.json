@@ -4,6 +4,15 @@
 	"description": "Nerd Font, Unicode, emoji and pure-ASCII icon presets for Pi's tool rows and chat surface",
 	"type": "module",
 	"license": "MIT",
+	"author": "Chandra Doredla",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/chandra447/pi-glyphs.git"
+	},
+	"homepage": "https://github.com/chandra447/pi-glyphs#readme",
+	"bugs": {
+		"url": "https://github.com/chandra447/pi-glyphs/issues"
+	},
 	"keywords": [
 		"pi-package",
 		"pi-extension",
